@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HeaderViewDelegate: class {
+protocol HeaderViewDelegate: AnyObject {
     func toggleSection(header: HeaderView, section: Int)
 }
 
@@ -62,7 +62,7 @@ extension UIView {
         animation.toValue = toValue
         animation.duration = duration
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         
         self.layer.add(animation, forKey: nil)
     }
